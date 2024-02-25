@@ -9,7 +9,7 @@ const pauseDuration = 1000
 const isDeleting = false
 
 document.addEventListener('DOMContentLoaded', function() {
-
+  openModal()
   appendUserMessage('Tell me about animal charities that specifically help seals and turtles')
   
   typewords()
@@ -144,4 +144,37 @@ document.addEventListener('DOMContentLoaded', function() {
       await sleepword(pauseDuration);
       currentWordIndex = (currentWordIndex + 1) % words.length;
     }
+  }
+
+  function openModal (){
+      // Get modal element
+  var modal = document.getElementById("myModal");
+  // Get button that opens the modal
+  var btn = document.getElementById("gb-feedback"); // You need to add this button in your HTML
+  // Get the element that closes the modal
+  var closeModal = document.getElementById("closeModal");
+  var closeButton = document.getElementById("closeButton");
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    console.log("click me");
+    modal.classList.remove("gb-hidden");
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeModal.onclick = function() {
+    modal.classList.add("gb-hidden");
+  }
+
+  // Also close when clicking the close button
+  closeButton.onclick = function() {
+    modal.classList.add("hidden");
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.classList.add("hidden");
+    }
+  }
   }
