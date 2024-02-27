@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   scrollToDiv('gb-footer')
   openModal()
   appendUserMessage('Tell me about animal charities that specifically help seals and turtles')
-  
+  mobileChat()
   typewords()
   appendBotDiv('I am a chatbot. How can I help you?')
   document.getElementById('chatbot-send').onclick = function() {
@@ -183,4 +183,24 @@ document.addEventListener('DOMContentLoaded', function() {
   function scrollToDiv(idname) {
     const targetDiv = document.getElementById(idname);
     targetDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }
+
+  function mobileChat(){
+    var maximizeChat = document.getElementById("gb-maximize");
+    var miniButton = document.getElementById("gb-miniButton");
+    var miniChat = document.getElementById("gb-halfchat");
+
+    var minimizeChat = document.getElementById("gb-minize");
+    
+    maximizeChat.onclick = function() {
+    
+      miniButton.classList.add("gb-hidden");
+      miniChat.classList.remove("gb-hidden")
+    }
+
+    minimizeChat.onclick = function() {
+    
+      miniChat.classList.add("gb-hidden");
+      miniButton.classList.remove("gb-hidden")
+    }
   }
