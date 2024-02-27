@@ -9,6 +9,7 @@ const pauseDuration = 1000
 const isDeleting = false
 
 document.addEventListener('DOMContentLoaded', function() {
+  scrollToDiv('gb-footer')
   openModal()
   appendUserMessage('Tell me about animal charities that specifically help seals and turtles')
   
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < currentText.length; i++) {
       if (currentWordIndex !== wordIndex) return;
       displayText = currentText.substr(0, i + 1);
-      console.log(displayText);
+      // console.log(displayText);
       //append text
       //document.getElementById('gb-bot-loading').appendChild(document.createTextNode(displayText));
     //  document.getElementById('gb-bot-loading').value = displayText;
@@ -121,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // document.getElementById('gb-bot-loading').appendChild(document.createTextNode(displayText));
       // document.getElementById('gb-bot-loading').value = displayText;
       document.getElementById('gb-bot-loading').innerHTML = displayText;
-      console.log(displayText);
+      // console.log(displayText);
       await sleepword(deletingSpeed);
     }
   }
@@ -177,4 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.classList.add("hidden");
     }
   }
+  }
+
+  function scrollToDiv(idname) {
+    const targetDiv = document.getElementById(idname);
+    targetDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }

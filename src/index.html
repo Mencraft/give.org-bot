@@ -7,12 +7,18 @@
   <title>Document</title>
 </head>
 <body style="background-color: aqua;">
-
+<div class="header">
+  <nav>
+    <a href="">First</a>
+    <a href="">Second</a>
+  </nav>
+</div>
   <div class="gb-flex gb-flex-row">
     <div class="gb-basis-1/4">01</div>
     <div class="gb-basis-1/2">02</div>
     <div class="gb-basis-1/4">
-      <div class="gb-mx-auto  gb-flex gb-flex-col gb-h-screen  gb-p-3 ">
+      <div class="gb-mx-auto gb-fixed gb-flex gb-flex-col gb-h-screen gb-bg-[#FBF3DE]  gb-p-3 " >
+      <!-- Header -->
         <div class="gb-flex gb-flex-row gb-justify-between gb-items-center" id="gb-header">
           <div class="gb-flex gb-items-center gb-justify-center gb-space-x-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,8 +71,8 @@
       </button>
           </div>
         </div>
-
-        <div class="gb-flex-1 gb-overflow-y-auto gb-mt-5" >
+<!-- Body -->
+        <div class=" gb-h-screen gb-overflow-y-auto gb-mt-5 gb-mb-32" >
           <div id="gb-chatbody">
             <div id="gb-bot-welcome" >
               <!-- <img src="https://via.placeholder.com/150" alt=""> -->
@@ -141,10 +147,11 @@
 
         
           </div>
+         
+    </div>
+<!-- Loader -->
 
-          </div>
-          <div id="gb-bot-scrolldown" />
-          <div id="gb-bot-loader " class="gb-mt-5">
+       <div id="gb-bot-loader " class="gb-mt-5">
            
             <div class="gb-flex gb-space-x-2 gb-font-bold gb-items-end gb-justify-start gb-p-4  gb-my-5 gb-rounded">
               <p  class=" ">
@@ -158,26 +165,30 @@
           
       
           </div>
+         
+
+          <div id="gb-bot-scrolldown" />
         </div>
-        <div class="gb-my-5 gb-px-4">
+<!-- Footer -->
+        <div id="gb-footer" class="gb-my-5 gb-flex gb-flex-col gb-flex-grow gb-fixed  gb-bottom-0 gb-px-4">
           <div>
-            <form>
              
 <form>
   
-  <div class="gb-flex gb-items-center  gb-py-2 gb-rounded-lg  ">
+  <div class="gb-flex gb-items-center   gb-rounded-lg  gb-bg-[#00437B] ">
     
       <textarea id="chat" rows="1" class="gb-block gb-p-2.5 gb-w-full gb-text-sm gb-text-gray-900 gb-bg-white gb-rounded-lg gb-border gb-border-gray-300 gb-focus:ring-blue-500 gb-focus:border-blue-500 " placeholder="Your message..."></textarea>
           <button type="submit" class="gb-inline-flex gb-justify-center gb-p-2 gb-text-blue-600 gb-rounded-full gb-cursor-pointer gb-hover:bg-blue-100 ">
-          <svg class="gb-w-5 gb-h-5 gb-rotate-90 gb-rtl:gb--rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-              <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z"/>
-          </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.33129 11.8258L1 1C8.96884 3.31763 16.4835 6.97883 23.22 11.8258C16.4839 16.6726 8.96964 20.3338 1.00122 22.6516L4.33129 11.8258ZM4.33129 11.8258H13.4798" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              
           <span class="gb-sr-only">Send message</span>
       </button>
   </div>
 </form>
 
-            </form>
+            
           </div>
           <footer class="">
             <div class="gb-w-full gb-mx-auto gb-max-w-screen-xl  mt-2  gb-flex gb-items-center gb-justify-between">
@@ -218,10 +229,10 @@
 
 
   <!-- Floating Chat Icon/Button -->
-<div id="chatbot-icon" style="display:none; position: fixed; bottom: 20px; right: 20px; cursor: pointer;">
-  <!-- Example using text, but you can replace this with an image or icon -->
+<!-- <div id="chatbot-icon" style="display:none; position: fixed; bottom: 20px; right: 20px; cursor: pointer;">
+
   <span>Chat</span>
-</div>
+</div> -->
 
 <!-- Chatbot Container -->
 <div id="chatbot-container" style="display:none;">
