@@ -10,6 +10,7 @@ module.exports = {
   // Output configuration
   output: {
     filename: 'bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     // assetModuleFilename: 'images/[hash][ext][query]',
