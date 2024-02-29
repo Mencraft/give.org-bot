@@ -4,7 +4,6 @@ let currentWordIndex = 0
 const typingSpeed = 150
 const deletingSpeed = 100
 const pauseDuration = 1000
-const isDeleting = false
 
 export function appendUserMessage(message) {
   const chatContainer = document.getElementById('gb-chatbody');
@@ -154,6 +153,7 @@ if (event.target == modal) {
   export async function typewords (){
 
 
+    // eslint-disable-next-line no-constant-condition
     while (true) {
       const currentText = words[currentWordIndex];
       const wordIndex = currentWordIndex;

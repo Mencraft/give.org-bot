@@ -12,6 +12,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.17",
     "css-minimizer-webpack-plugin": "^6.0.0",
+    "eslint": "^8.57.0",
+    "eslint-webpack-plugin": "^4.0.1",
     "mini-css-extract-plugin": "^2.8.0",
     "postcss": "^8.4.35",
     "postcss-loader": "^8.1.0",

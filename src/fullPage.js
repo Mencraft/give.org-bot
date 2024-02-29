@@ -8,7 +8,7 @@ export default function initFullScreenPage() {
   scrollToDiv('gb-bot-scrolldown')
 
   appendUserMessage('Tell me about animal charities that specifically help seals and turtles')
-  appendBotDiv('I am a chatbot. How can I help you?')
+  appendBotDiv('Charities that help sea animals include the Sea Turtle Conservation Group and the Ocean Conversation Agency.')
   appendReferences()
   appendReferences()
   appendAction()
@@ -59,14 +59,19 @@ img.src = "../public/giveorg.svg";
 botDiv.appendChild(img);
 const botFlex = document.createElement('div');
 botFlex.id="botFlex-1"
-botFlex.className = "gb-bg-[#ffff] gb-rounded"
+botFlex.className = "gb-bg-[#ffff] gb-rounded "
+
 botDiv.appendChild(botFlex);
 chatContainer.appendChild(botDiv);
 
 
 
-appendBotMessage(botFlex, message);
 
+appendBotMessage(botFlex, message);
+const botRefer = document.createElement('div');
+botRefer.id="botRef-1"
+botRefer.className = "gb-mt-2 gb-px-4 gb-flex gb-flex-wrap gb-space-x-3"
+botFlex.appendChild(botRefer);
 
 
 
@@ -84,36 +89,33 @@ appendBotMessage(botFlex, message);
 }
 
 function appendReferences(){
-  const botContainer = document.getElementById('botFlex-1');
-  const referencesDiv = document.createElement('div');
-  referencesDiv.className = 'gb-mt-2 gb-px-4 gb-flex';
-  referencesDiv.id="gb-references"
+  const botContainer = document.getElementById('botRef-1');
 
-  const referenceDiv = document.createElement('div');
-  referenceDiv.className = 'gb-bg-[#FFD368] gb-inline-flex gb-space-x-3 gb-rounded-lg  gb-items-center gb-p-3';
   const referenceLink = document.createElement('a');
   referenceLink.href = "/";
-  referenceLink.className="hover:gb-underline"
-  referenceLink.textContent = "Heart of Giving Kelley Bevis";
+
+  const spanLink = document.createElement('span');
+  spanLink.className = "gb-bg-[#FFD368] gb-space-x-2 gb-no-underline gb-hover:underline gb-text-xs gb-font-medium gb-inline-flex gb-items-center gb-px-2.5 gb-py-0.5 gb-rounded";
   
+
   const referenceImg = document.createElement('img');
   referenceImg.src = "../public/book.svg";
-  referenceDiv.appendChild(referenceImg);
+  spanLink.appendChild(referenceImg);
  
 
+  const referenceText = document.createElement('p');
+  referenceText.textContent = "Heart of Giving Kelley Bevis";
+  referenceText.className="hover:gb-underline"
+
+  spanLink.appendChild(referenceText);
 
 
 
+  referenceLink.appendChild(spanLink);
 
 
-  
 
-  // referenceDiv.appendChild(messageActionsDiv);
-
-  referenceDiv.appendChild(referenceLink);
-  referencesDiv.appendChild(referenceDiv);
-
-  botContainer.appendChild(referencesDiv);
+  botContainer.appendChild(referenceLink);
   // botContainer.appendChild(messageActionsDiv);
 }
 

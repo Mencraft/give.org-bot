@@ -1,5 +1,5 @@
 import './styles.css';
-
+import './fonts/fonts.css'
 
 
 document.addEventListener('DOMContentLoaded', function() {

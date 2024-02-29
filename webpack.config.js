@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const path = require('path');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   // Entry point of your application
@@ -44,10 +46,18 @@ module.exports = {
         },
         include: path.resolve(__dirname, 'public'), // Include images from the public/images folder
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext][query]', // Output fonts into fonts folder in the dist directory
+        },
+      },
     ],
   },
     // Plugins configuration
     plugins: [
+      new ESLintWebpackPlugin(),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional
