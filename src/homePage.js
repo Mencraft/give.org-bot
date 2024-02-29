@@ -1,4 +1,4 @@
-import { openModal, scrollToDiv, typewords ,appendUserMessage,appendBotDiv ,mobileChat} from "./utils";
+import { openModal, scrollToDiv,appendAction,appendReferences, typewords ,appendUserMessage,appendBotDiv ,mobileChat} from "./utils";
 
 export default function initHomePage() {
   console.log('Initializing home page logic');
@@ -11,7 +11,8 @@ export default function initHomePage() {
 
 
   appendBotDiv('I am a chatbot. How can I help you?')
-
+  appendReferences()
+  appendAction()
   mobileChat()
 
   const gbform = document.getElementById('gb-form');
