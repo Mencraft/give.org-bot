@@ -52,14 +52,14 @@ getCUrrentyear.textContent = new Date().getFullYear() + '©';
 // Create bot message container and image outside the function
 const chatContainer = document.getElementById('gb-chatbody');
 const botDiv = document.createElement('div');
-botDiv.className = 'gb-mt-5 gb-flex gb-flex-row gb-items-start gb-space-x-3';
+botDiv.className = 'gb-mt-5  gb-flex gb-flex-row gb-items-start gb-space-x-3';
 botDiv.id = "gb-bot";
 const img = document.createElement('img');
 img.src = "../public/giveorg.svg";
 botDiv.appendChild(img);
 const botFlex = document.createElement('div');
 botFlex.id="botFlex-1"
-botFlex.className = "gb-bg-[#ffff] gb-rounded "
+botFlex.className = "gb-bg-[#FAF4E3] gb-rounded "
 
 botDiv.appendChild(botFlex);
 chatContainer.appendChild(botDiv);
@@ -81,7 +81,7 @@ botFlex.appendChild(botRefer);
  function appendBotMessage(botDiv,message) {
   // Create a <p> element
   const messageParagraph = document.createElement('p');
-  messageParagraph.className = 'gb-p-4 gb-bg-[#ffff] gb-my-5 gb-rounded';
+  messageParagraph.className = 'gb-p-4  gb-my-5 gb-rounded';
   // Set its text content to the message
   messageParagraph.textContent = message;
   // Append the <p> element to the botDiv
