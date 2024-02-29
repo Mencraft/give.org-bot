@@ -13,4 +13,13 @@ export default function initHomePage() {
   appendBotDiv('I am a chatbot. How can I help you?')
 
   mobileChat()
+
+  const gbform = document.getElementById('gb-form');
+  const gbloader = document.getElementById('gb-bot-loader');
+  // Add event listener to form
+   gbform.addEventListener('submit', (event) => {
+     event.preventDefault();
+     console.log('CLicked me');
+     gbloader.classList.remove("gb-hidden");
+   })
 }

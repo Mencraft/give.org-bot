@@ -10,6 +10,8 @@ export default function initFullScreenPage() {
   appendUserMessage('Tell me about animal charities that specifically help seals and turtles')
   appendBotDiv('I am a chatbot. How can I help you?')
   appendReferences()
+  appendReferences()
+  appendAction()
 
 const getCUrrentyear = document.getElementById('gb-current-year');
 getCUrrentyear.textContent = new Date().getFullYear() + '©';
@@ -61,7 +63,13 @@ botFlex.className = "gb-bg-[#ffff] gb-rounded"
 botDiv.appendChild(botFlex);
 chatContainer.appendChild(botDiv);
 
+
+
 appendBotMessage(botFlex, message);
+
+
+
+
 }
 
 
@@ -93,19 +101,37 @@ function appendReferences(){
   referenceDiv.appendChild(referenceImg);
  
 
-  const messageActionsDiv = document.createElement('div');
-  messageActionsDiv.className = "gb-px-4 gb-my-2 gb-pb-3"
-  messageActionsDiv.id="gb-message-actions-1"
-  
-  // Reload button
-  const reloadActionsButton = document.createElement('button');
-  reloadActionsButton.className = "hover:gb-bg-[#E4E4E4] gb-p-2.5 gb-rounded-full";
-  const reloadImg = document.createElement('img');
-  reloadImg.src = "../public/reload.svg";
-  reloadActionsButton.appendChild(reloadImg);
-  reloadActionsButton.id="gb-message-actions-2"
-  messageActionsDiv.appendChild(reloadActionsButton);
 
+
+
+
+
+  
+
+  // referenceDiv.appendChild(messageActionsDiv);
+
+  referenceDiv.appendChild(referenceLink);
+  referencesDiv.appendChild(referenceDiv);
+
+  botContainer.appendChild(referencesDiv);
+  // botContainer.appendChild(messageActionsDiv);
+}
+
+function appendAction(){
+  // Actions 
+const botContainer = document.getElementById('botFlex-1');
+const messageActionsDiv = document.createElement('div');
+messageActionsDiv.className = "gb-px-4 gb-my-2 gb-pb-3"
+messageActionsDiv.id="gb-message-actions-1"
+
+// Reload button
+const reloadActionsButton = document.createElement('button');
+reloadActionsButton.className = "hover:gb-bg-[#E4E4E4] gb-p-2.5 gb-rounded-full";
+const reloadImg = document.createElement('img');
+reloadImg.src = "../public/reload.svg";
+reloadActionsButton.appendChild(reloadImg);
+reloadActionsButton.id="gb-message-actions-2"
+messageActionsDiv.appendChild(reloadActionsButton);
 
     // Report button
     const reportActionsButton = document.createElement('button');
@@ -116,15 +142,6 @@ function appendReferences(){
     reportActionsButton.id="gb-message-actions-2"
     messageActionsDiv.appendChild(reportActionsButton);
 
-  
-
-  referenceDiv.appendChild(messageActionsDiv);
-
-  referenceDiv.appendChild(referenceLink);
-  referencesDiv.appendChild(referenceDiv);
-
-  botContainer.appendChild(referencesDiv);
-  botContainer.appendChild(messageActionsDiv);
+    botContainer.appendChild(messageActionsDiv);
 }
-
 
