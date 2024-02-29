@@ -8,21 +8,28 @@ export default function initFullScreenPage() {
   scrollToDiv('gb-bot-scrolldown')
 
   appendUserMessage('Tell me about animal charities that specifically help seals and turtles')
-  appendBotDiv('Charities that help sea animals include the Sea Turtle Conservation Group and the Ocean Conversation Agency.')
+  appendBotDiv(' Giving CoachAI is designed to answer questions about philanthropy and charitable giving, especially when and how to trust charities when giving. It contains information from across Give.org, including podcasts, videos, blogs, and reports. ')
   appendReferences()
   appendReferences()
   appendAction()
+
+
+
 
 const getCUrrentyear = document.getElementById('gb-current-year');
 getCUrrentyear.textContent = new Date().getFullYear() + '©';
 
  const gbform = document.getElementById('gb-form');
  const gbloader = document.getElementById('gb-bot-loader');
+ const gbsubbutton = document.getElementById('gb-submit-icon');
+ const gbbuttonloader = document.getElementById('gb-submit-loading');
  // Add event listener to form
   gbform.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log('CLicked me');
     gbloader.classList.remove("gb-hidden");
+    gbsubbutton.classList.add("gb-hidden");
+    gbbuttonloader.classList.remove("gb-hidden");
   })
 }
 
@@ -52,7 +59,7 @@ getCUrrentyear.textContent = new Date().getFullYear() + '©';
 // Create bot message container and image outside the function
 const chatContainer = document.getElementById('gb-chatbody');
 const botDiv = document.createElement('div');
-botDiv.className = 'gb-mt-5  gb-flex gb-flex-row gb-items-start gb-space-x-3';
+botDiv.className = 'gb-mt-5  gb-flex gb-flex-col md:gb-flex-row gb-items-start gb-space-x-3';
 botDiv.id = "gb-bot";
 const img = document.createElement('img');
 img.src = "../public/giveorg.svg";
@@ -70,7 +77,7 @@ chatContainer.appendChild(botDiv);
 appendBotMessage(botFlex, message);
 const botRefer = document.createElement('div');
 botRefer.id="botRef-1"
-botRefer.className = "gb-mt-2 gb-px-4 gb-flex gb-flex-wrap gb-space-x-3"
+botRefer.className = "gb-mt-2 gb-px-4 gb-flex gb-flex-wrap gb-space-x-0 md:gb-space-x-3"
 botFlex.appendChild(botRefer);
 
 
@@ -95,7 +102,7 @@ function appendReferences(){
   referenceLink.href = "/";
 
   const spanLink = document.createElement('span');
-  spanLink.className = "gb-bg-[#FFD368] gb-space-x-2 gb-no-underline gb-hover:underline gb-text-xs gb-font-medium gb-inline-flex gb-items-center gb-px-2.5 gb-py-0.5 gb-rounded";
+  spanLink.className = "gb-bg-[#FFD368] gb-space-x-2 gb-no-underline gb-hover:underline gb-text-xs gb-font-medium gb-inline-flex gb-items-center gb-px-2.5 gb-py-0.5 gb-rounded-lg";
   
 
   const referenceImg = document.createElement('img');
